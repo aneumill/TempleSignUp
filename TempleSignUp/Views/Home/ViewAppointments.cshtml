@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "View Appointments";
+}
+
+@model IEnumerable<SignUpModel>;
+
+<div class="text-center">
+    <div class="text-center">
+        <table class="center table table-dark table-striped table-hover table-bordered">
+            <!--Table for the database-->
+            <thead>
+                <tr>
+                    <th>Group Name</th>
+                    <th>Group Size</th>
+                    <th>Group Email</th>
+                    <th>Group Phone</th>
+                    <th>TourTime</th>
+
+                </tr>
+            </thead>
+
+
+
+            <tbody>
+                <!--Loops through all of the items in the database to print them out here-->
+                @foreach (var x in Model)
+                {
+
+
+                    //See BookSummary.cshtml
+                    <partial name="TourSummary" model="x" />
+                }
+            </tbody>
+        </table>
+    </div>
+    <!--Import the page navigation Model and Action
+    <div page-model="Model.PagingInfo" page-Action="Index" page-classes-enabled="true"
+         page-class="btn" page-class-normal="btn-ouline-dark" page-class-selected="btn-light"
+         class="pull-right m1 "> </div>
+        <div page-model="Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
+         page-class-normal="btn-outline-dark"
+         page-class-selected="btn-dark"
+         class="text-center bg-light m1" page-url-category="Model.CurrentCategory">
+
+
+
+    </div>
+    -->
+
+
+</div>
+
+
