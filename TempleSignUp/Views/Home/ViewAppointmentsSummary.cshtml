@@ -5,10 +5,11 @@
 }
 @model SlottedTime
 
+
 <tr class="table-hover text-center">
-    <td>@Model.Schedule.Month/@Model.Schedule.Day/@Model.Schedule.Year  </td>
-    <td>@Model.Schedule.Hour:@Model.Schedule.Minute  0 </td>
-  
+    <td>@Model.Schedule.ToLongDateString() </td>
+    <td>@Model.Schedule.ToShortTimeString()</td>
+   
     @if(@Model.Availbility = true )
     {
     <td>

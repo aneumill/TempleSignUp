@@ -52,12 +52,11 @@ namespace TempleSignUp.Controllers
         }
         [HttpPost]
         public IActionResult BookingForm(ViewApppointmentList formsubmission)
-        {
+        { 
             if (ModelState.IsValid)
             {
                 context.Groups.Add(formsubmission.signup);
-                //context.Times.Where(p => p.SlottedTimeID == formsubmission.slottedtime.SlottedTimeID).ToList().Select(c => { c.Availbility = false; return c; });
-                context.SaveChanges();
+                //SlottedTime slottedtimes = (from p in context.Times where p.SlottedTimeID = submissionform select p).SingleOrDefault();
                 return View("Index" );
         
             }

@@ -19,8 +19,8 @@ namespace TempleSignUp.Models
 
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$")]
         public string PhoneNumber { get; set;  }
-
-        //public DateTime TourTime { get; set; }
+        [Required]
+        public string TourTime { get; set; }
 
     }
 }

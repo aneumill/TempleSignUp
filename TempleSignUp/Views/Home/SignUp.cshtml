@@ -6,12 +6,12 @@
 
 <div>
 
-    <p>This is the Sign-Up Page</p>
+    <h1 class="text-center">Available Tour Times</h1>
     <table class="center table table-dark table-striped table-hover table-bordered">
         <!--Table for the database-->
         <thead>
             <tr>
-                <th>Date</th>
+                <th>Date </th>
                 <th>Time</th>
                 <th>Book</th>
 
@@ -25,7 +25,7 @@
             @foreach (var x in Model)
             {
 
-                <partial name="TimeSlotSummary" model="x" />
+                <partial name="ViewAppointmentsSummary" model="x" />
 
              }
 </tbody>

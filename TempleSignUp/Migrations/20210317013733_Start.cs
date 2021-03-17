@@ -16,7 +16,8 @@ namespace TempleSignUp.Migrations
                     GroupName = table.Column<string>(type: "TEXT", nullable: false),
                     GroupSize = table.Column<int>(type: "INTEGER", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "TEXT", nullable: true)
+                    PhoneNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    TourTime = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

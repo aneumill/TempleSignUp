@@ -9,8 +9,8 @@ using TempleSignUp.Models;
 namespace TempleSignUp.Migrations
 {
     [DbContext(typeof(TourGroupContext))]
-    [Migration("20210316172804_Start")]
-    partial class Start
+    [Migration("20210317024754_Start2")]
+    partial class Start2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,6 +36,10 @@ namespace TempleSignUp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("PhoneNumber")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TourTime")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("GroupID");
