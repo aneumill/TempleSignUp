@@ -56,14 +56,17 @@ namespace TempleSignUp.Controllers
             if (ModelState.IsValid)
             {
                 context.Groups.Add(formsubmission.signup);
-                //SlottedTime slottedtimes = (from p in context.Times where p.SlottedTimeID = submissionform select p).SingleOrDefault();
+                IQueryable<SlottedTime> mytimes = context.Times.Where(t => t.SlottedTimeID == formsubmission.slottedtime.SlottedTimeID);
+                foreach (var x in mytimes)
+                {
+                    x.Availbility = false;
+                }
                 context.SaveChanges();
                 return View("Index");
-        
             }
             else
             {
-                return View();
+                return View(formsubmission);
             }
         }
 

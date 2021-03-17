@@ -3,8 +3,8 @@
 *@
 @{
     ViewData["Title"] = "Booking Form";
-    
-    
+
+
 }
 @model TempleSignUp.Models.ViewModel.ViewApppointmentList
 
@@ -12,7 +12,10 @@
 <h2> Confirm you booking on @Model.slottedtime.Schedule </h2>
 
 <form asp-action="BookingForm" method="post" class="center">
-    <input asp-for="signup.TourTime" type="hidden" name="signup.TourTime" value="@Model.slottedtime.Schedule.ToString()" /> 
+    <input asp-for="slottedtime.Schedule" type="hidden" value="@Model.slottedtime.Schedule" />
+    <input asp-for="slottedtime.Availbility" type="hidden" value="false" />
+    <input asp-for="slottedtime.SlottedTimeID" type="hidden" value="@Model.slottedtime.SlottedTimeID" />
+    <input asp-for="signup.TourTime" type="hidden" name="signup.TourTime" value="@Model.slottedtime.Schedule.ToString()" />
     <div>
         <label asp-for="signup.GroupName">Group Name</label>
         <input asp-for="signup.GroupName" placeholder="" />

@@ -10,7 +10,7 @@
     <td>@Model.Schedule.ToLongDateString() </td>
     <td>@Model.Schedule.ToShortTimeString()</td>
    
-    @if(@Model.Availbility = true )
+    @if(@Model.Availbility == true )
     {
     <td>
         <form id="@Model.SlottedTimeID" asp-page="/SignUp" method="post">
