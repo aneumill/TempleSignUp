@@ -14,16 +14,18 @@ namespace TempleSignUp.Models
         {
             TourGroupContext context = application.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<TourGroupContext>();
 
+            //Will migrate the data if there isn't already
             if (context.Database.GetPendingMigrations().Any())
             {
                 context.Database.Migrate();
 
             }
 
+            //if there aren't any changes in times, load up the seed data
             if (!context.Times.Any())
             {
                 context.Times.AddRange(
-             //Populates the database with seed data
+             //Populates the database with seed data that's hardcoded below
 
              new SlottedTime
              {
@@ -407,7 +409,7 @@ namespace TempleSignUp.Models
                 context.SaveChanges();
 
 
-             }
+            }
         }
     }
 }

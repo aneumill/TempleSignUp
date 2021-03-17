@@ -26,8 +26,10 @@ namespace TempleSignUp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //Adding in the Database table with values
             services.AddDbContext<TourGroupContext>(options =>
            {
+               //uses Sqlite to create the Database for the program and access the data
                options.UseSqlite(Configuration["ConnectionStrings:TourGroupConnection"]);
            });
         }
@@ -54,9 +56,11 @@ namespace TempleSignUp
 
             app.UseEndpoints(endpoints =>
             {
+                //endpoints to show the route through the pages in the url
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
             });
 
             SeedDates.EnsurePopulated(app);

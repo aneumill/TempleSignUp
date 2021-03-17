@@ -6,16 +6,22 @@
 
 
 }
+@*Pass in the shared View Model*@
 @model TempleSignUp.Models.ViewModel.ViewApppointmentList
 
 
+@*Pull in the Scheduled Time they selected*@
 <h2> Confirm you booking on @Model.slottedtime.Schedule </h2>
 
+@*This is the form for the Sign Up Model*@
 <form asp-action="BookingForm" method="post" class="center">
+    @*Pass in the hidden objects from the view  model*@
     <input asp-for="slottedtime.Schedule" type="hidden" value="@Model.slottedtime.Schedule" />
     <input asp-for="slottedtime.Availbility" type="hidden" value="false" />
     <input asp-for="slottedtime.SlottedTimeID" type="hidden" value="@Model.slottedtime.SlottedTimeID" />
     <input asp-for="signup.TourTime" type="hidden" name="signup.TourTime" value="@Model.slottedtime.Schedule.ToString()" />
+    
+    @*Pass in the objects from the view model that the user will submit*@
     <div>
         <label asp-for="signup.GroupName">Group Name</label>
         <input asp-for="signup.GroupName" placeholder="" />
@@ -36,4 +42,5 @@
     <button type="submit" id="button" class="btn btn-info"> Submit </button>
 </form>
 
+@*Error Validation Submmary*@
 <div asp-validation-summary="All"></div>
