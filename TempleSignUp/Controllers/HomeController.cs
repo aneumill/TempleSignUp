@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using TempleSignUp.Models;
+using TempleSignUp.Models.ViewModel;
 
 namespace TempleSignUp.Controllers
 {
@@ -26,11 +27,20 @@ namespace TempleSignUp.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult SignUp()
         {
             return View(context.Times.OrderBy(p => p.Schedule));
         }
-        
+        [HttpPost]
+        public IActionResult SignUp(SlottedTime s)
+        {
+            return View("BookingForm", new ViewApppointmentList
+            {
+                slottedtime = s
+            });  ;
+        }
+
         public IActionResult ViewAppointments()
         {
             return View(context.Groups);
@@ -41,11 +51,12 @@ namespace TempleSignUp.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult BookingForm(SignUpModel formsubmission)
+        public IActionResult BookingForm(ViewApppointmentList formsubmission)
         {
             if (ModelState.IsValid)
             {
-                context.Groups.Add(formsubmission);
+                context.Groups.Add(formsubmission.signup);
+                //context.Times.Where(p => p.SlottedTimeID == formsubmission.slottedtime.SlottedTimeID).ToList().Select(c => { c.Availbility = false; return c; });
                 context.SaveChanges();
                 return View("Index" );
         

@@ -11,7 +11,6 @@ namespace TempleSignUp.Models
         [Key]
         public int SlottedTimeID { get; set; }
         public DateTime Schedule { get; set; }
-
         public Boolean Availbility { get; set; } = true; 
 
 

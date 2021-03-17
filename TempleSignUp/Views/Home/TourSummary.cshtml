@@ -3,25 +3,15 @@
 *@
 @{
 }
-@model SignUpModel 
+@model SignUpModel
+
 
 <tr class="table-hover">
     <td>@Model.GroupName </td>
     <td>@Model.GroupSize</td>
     <td>@Model.Email</td>
     <td>@Model.PhoneNumber</td>
+    <td> </td>
+
    
-    @*<td>
-        <form id="@Model.BookId" asp-page="/BookPurchase" method="post">
-
-            <input type="hidden" asp-for="BookId" />
-            <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
-            <span class="card-text p1">
-                <button type="submit" class=" btn btn-success btn-sm text-center text-md-center">Add to Cart</button>
-
-            </span>
-
-        </form>
-    </td>*@
-    
 </tr>

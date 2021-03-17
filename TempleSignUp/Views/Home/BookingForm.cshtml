@@ -6,24 +6,26 @@
     
     
 }
-@model TempleSignUp.Models.SignUpModel
+@model TempleSignUp.Models.ViewModel.ViewApppointmentList
+
+<h2> Confirm you booking on @Model.slottedtime.Schedule</h2>
 
 <form asp-action="BookingForm" method="post" class="center">
     <div>
-        <label asp-for="GroupName">Group Name</label>
-        <input asp-for="GroupName" placeholder="" />
+        <label asp-for="signup.GroupName">Group Name</label>
+        <input asp-for="signup.GroupName" placeholder="" />
     </div>
     <div>
-        <label asp-for="GroupSize">Group Size</label>
-        <input placeholder="" asp-for="GroupSize" />
+        <label asp-for="signup.GroupSize">Group Size</label>
+        <input placeholder="" asp-for="signup.GroupSize" />
     </div>
     <div>
-        <label asp-for="Email">email</label>
-        <input asp-for="Email" placeholder="" />
+        <label asp-for="signup.Email">email</label>
+        <input asp-for="signup.Email" placeholder="" />
     </div>
     <div>
-        <label asp-for="PhoneNumber">Phone</label>
-        <input placeholder="801-111-1111" type="text" asp-for="PhoneNumber" />
+        <label asp-for="signup.PhoneNumber">Phone</label>
+        <input placeholder="801-111-1111" type="text" asp-for="signup.PhoneNumber" />
     </div>
     <br />
     <button type="submit" id="button" class="btn btn-info"> Submit </button>
