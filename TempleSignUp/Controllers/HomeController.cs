@@ -57,7 +57,8 @@ namespace TempleSignUp.Controllers
             {
                 context.Groups.Add(formsubmission.signup);
                 //SlottedTime slottedtimes = (from p in context.Times where p.SlottedTimeID = submissionform select p).SingleOrDefault();
-                return View("Index" );
+                context.SaveChanges();
+                return View("Index");
         
             }
             else
