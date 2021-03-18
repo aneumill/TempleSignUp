@@ -17,8 +17,9 @@ namespace TempleSignUp.Models
         //Name of group which is a required field and will output error if not included
         [Required(ErrorMessage = "Please enter a group name")]
         public string GroupName { get; set; }
-        //Size of group which is a required field and will output error if not included
-        [Required(ErrorMessage = "Please enter the number of people in your group")]
+        //Size of group which is a required field and will output error if not include
+        [Required]
+        [Range(1, int.MaxValue, ErrorMessage = "Please enter the number of individuals in your party")]
         public int GroupSize { get; set; }
         //Email which is a required field and will output error if not included
         [Required(ErrorMessage = "Please enter your email address"), EmailAddress]
